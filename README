@@ -2,7 +2,7 @@ https://www.aiutocomputerhelp.it/viaggiare-tra-vlan-e-possibile-fare-hop-il-vlan
 
 Proof-of-Concept (PoC) in Python utilizzando Scapy per simulare un attacco VLAN Hopping Double Tagging. Questo script crea e invia un pacchetto Ethernet con doppio tagging 802.1Q, dove il primo tag (Outer VLAN 10) viene rimosso da uno switch vulnerabile, permettendo al pacchetto di raggiungere una VLAN non autorizzata (Inner VLAN 20).
 
-⚠️ his software is provided solely for educational and security auditing purposes. It is intended to help network administrators, security professionals, and researchers identify vulnerabilities and improve the security of their own systems.
+⚠️ This software is provided solely for educational and security auditing purposes. It is intended to help network administrators, security professionals, and researchers identify vulnerabilities and improve the security of their own systems.
 
 Unauthorized use of this software on networks or systems without explicit permission from the owner is strictly prohibited. Scanning or probing networks without consent may violate local laws, regulations, and organizational policies. The author and distributor of this software assume no liability for any misuse, legal consequences, or damages resulting from its use.
 
