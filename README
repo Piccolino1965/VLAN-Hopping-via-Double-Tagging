@@ -1,6 +1,15 @@
 https://www.aiutocomputerhelp.it/viaggiare-tra-vlan-e-possibile-fare-hop-il-vlan-hopping/
 
-Proof-of-Concept (PoC) in Python utilizzando Scapy per simulare un attacco VLAN Hopping Double Tagging. Questo script crea e invia un pacchetto Ethernet con doppio tagging 802.1Q, dove il primo tag (Outer VLAN 10) viene rimosso da uno switch vulnerabile, permettendo al pacchetto di raggiungere una VLAN non autorizzata (Inner VLAN 20).
+This software is a Proof-of-Concept (PoC) for VLAN Hopping via Double Tagging, a network attack technique used to bypass VLAN security restrictions. It demonstrates how an attacker can send a specially crafted Ethernet frame with two VLAN tags to infiltrate a restricted VLAN.
+
+How It Works
+Frame Construction: The script creates an Ethernet packet with two VLAN tags using Scapy. The outer VLAN tag (10) corresponds to the VLAN visible to the vulnerable switch, while the inner VLAN tag (20) represents the target VLAN the attacker wants to access.
+Packet Transmission: The crafted packet is sent over the attacker's network interface (e.g., eth0), with a spoofed MAC address (00:11:22:33:44:55).
+Exploiting Vulnerable Switches: If the switch is misconfigured or vulnerable, it removes the outer VLAN tag when forwarding the packet but mistakenly forwards it to VLAN 20 instead of VLAN 10, effectively granting unauthorized access.
+Targeted Attack: The packet is directed at an IP inside VLAN 20 (192.168.20.1), with a UDP transport layer to simulate a service request.
+Purpose
+This PoC serves as an educational tool to demonstrate security weaknesses in improperly configured VLANs and highlight the importance of implementing countermeasures such as VLAN access control lists (ACLs), private VLANs, and proper switch port configurations to mitigate VLAN Hopping attacks.
+
 
 ⚠️ This software is provided solely for educational and security auditing purposes. It is intended to help network administrators, security professionals, and researchers identify vulnerabilities and improve the security of their own systems.
 
